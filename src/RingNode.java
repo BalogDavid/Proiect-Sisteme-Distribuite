@@ -120,6 +120,8 @@ public class RingNode {
             } catch (IOException e) {
                 System.err.println("Nodul " + nextHost + ":" + nextPort + " inaccesibil. Încercăm următorul...");
                 nextPort += 1;
+                if (nextPort>=3300)
+                    nextPort = myPort+1;
             }
         }
     }
